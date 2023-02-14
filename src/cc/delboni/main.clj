@@ -21,7 +21,7 @@
 
 (defn create
   "Exec function to create a new project from a template.
-  `:repository` -- a symbol (or string) identifying the template is in github,
+  `:repo` -- a symbol (or string) identifying the template is in github,
   `:template` -- a symbol (or string) identifying the template,
   `:name` -- a symbol (or string) identifying the project name,
   `:target-dir` -- optional string identifying the directory to
@@ -39,10 +39,15 @@
 
 (defn git [{:keys [url] :as opts}]
   (create (fn [_] (str url)) (dissoc opts :url)))
+
 (def gh (partial create repo->github-url))
+
 (def gl (partial create repo->gitlab-url))
+
 (def bb (partial create repo->bitbucket-url))
+
 (def sh (partial create repo->sourcehut-url))
+
 (def cb (partial create repo->codeberg-url))
 
 (comment

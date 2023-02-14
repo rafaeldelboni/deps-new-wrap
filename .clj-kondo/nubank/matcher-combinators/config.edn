@@ -1,0 +1,4 @@
+{:linters
+ {:unresolved-symbol
+  {:exclude [(clojure.test/is [match? thrown-match?])]}}
+ :config-in-ns {cc.delboni.main {:linters {:clojure-lsp/unused-public-var {:level :off}}}}}
