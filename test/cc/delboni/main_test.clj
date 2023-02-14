@@ -30,10 +30,8 @@
 (deftest input->opts-test
   (testing "should build the git urls"
     (is (= {:git "https://github.com/owner/repo.git"
-            :repo "owner/repo"
             :template "owner/repo"}
            (main/input->opts main/repo->github-url "owner/repo" {})))
     (is (= {:git "https://github.com/owner/repo.git"
-            :repo "owner/repo"
             :template "ns/name"}
            (main/input->opts main/repo->github-url "owner/repo" {:template "ns/name"})))))

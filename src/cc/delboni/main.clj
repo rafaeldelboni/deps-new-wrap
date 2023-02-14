@@ -11,7 +11,7 @@
 
 (defn create
   "Exec function to create a new project from a template.
-  `:repo` -- a symbol (or string) identifying the template is in github,
+  `:git` -- a symbol (or string) git url to fetch the template,
   `:template` -- a symbol (or string) identifying the template,
   `:name` -- a symbol (or string) identifying the project name,
   `:target-dir` -- optional string identifying the directory to
@@ -20,10 +20,10 @@
       for `:delete`, to delete it first; if `:overwrite` is `nil`
       or `false`, an existing directory will not be overwritten."
   [opts]
-  (println "loading template from git")
+  (println "loading template from git2")
   (load-git opts)
   (println "creating new project from template")
-  (new/create (dissoc opts :repo)))
+  (new/create opts))
 
 (defn repo->url [base-url extension repo]
   (str base-url repo extension))
@@ -35,10 +35,9 @@
 (def repo->codeberg-url (partial repo->url "https://codeberg.org/" ".git"))
 
 (defn input->opts
-  [url-fn repo {:keys [template] :as opts}]
+  [repo->url-fn repo {:keys [template] :as opts}]
   (assoc opts
-         :git (url-fn repo)
-         :repo repo
+         :git (repo->url-fn repo)
          :template (or template repo)))
 
 (defn new [opts]
