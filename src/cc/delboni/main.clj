@@ -20,7 +20,7 @@
       for `:delete`, to delete it first; if `:overwrite` is `nil`
       or `false`, an existing directory will not be overwritten."
   [opts]
-  (println "loading template from git2")
+  (println "loading template from git")
   (load-git opts)
   (println "creating new project from template")
   (new/create opts))
