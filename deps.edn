@@ -1,0 +1,36 @@
+{:paths ["src"]
+
+ :deps  {org.clojure/tools.deps {:mvn/version "0.16.1281"}
+         org.clojure/tools.gitlibs {:mvn/version "2.5.190"}
+         io.github.seancorfield/deps-new {:git/url "https://github.com/seancorfield/deps-new"
+                                          :git/sha "6f14ddb6f98c55d6bd8d6a50bcdf6bd1abdf57bf"}}
+
+ :aliases {:dev {:extra-paths ["test"]
+                 :extra-deps  {lambdaisland/kaocha {:mvn/version "1.77.1236"}
+                               nubank/matcher-combinators {:mvn/version "3.8.3"}}}
+
+           :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.30.0"}}
+                   :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}
+
+           :test {:main-opts ["-m" "kaocha.runner"]}
+
+           :uberjar {:deps {io.github.seancorfield/build-clj
+                            {:git/tag "v0.9.2" :git/sha "9c9f078"
+                             :deps/root "slim"}}
+                     :exec-fn org.corfield.build/uber
+                     :exec-args {:main cc.delboni.main
+                                 :uber-file "target/deps-new-wrap.jar"}}
+
+           ;; commands
+           :git {:ns-default cc.delboni.main
+                :exec-fn git}
+           :gh {:ns-default cc.delboni.main
+                :exec-fn gh}
+           :gl {:ns-default cc.delboni.main
+                :exec-fn gl}
+           :bb {:ns-default cc.delboni.main
+                :exec-fn bb}
+           :sh {:ns-default cc.delboni.main
+                :exec-fn sh}
+           :cb {:ns-default cc.delboni.main
+                :exec-fn cb}}}
