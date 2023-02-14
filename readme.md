@@ -1,5 +1,5 @@
 # deps-new-wrap
-Wrapper over deps-new to give a more user friendly CLI
+Wrapper over [deps-new](https://github.com/seancorfield/deps-new) to give a more user friendly CLI
 
 ## Installation
 You can install tools adding the following `:alias` into your local `~/.clojure/deps.edn` file:
