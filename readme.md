@@ -1,6 +1,15 @@
 # deps-new-wrap
 Wrapper over deps-new to give a more user friendly CLI
 
+## Installation
+You can install tools adding the following `:alias` into your local `~/.clojure/deps.edn` file:
+```clojure
+:new {:extra-deps {cc.delboni/deps-new-wrap
+                   {:git/url "https://github.com/rafaeldelboni/deps-new-wrap"
+                    :git/sha "aecc4565b917153d66485a62980df67616d600be"}}
+      :exec-fn cc.delboni.main/new}
+```
+
 ## Usage
 ```bash
 # For a template that is created with the github username/name as namespace
