@@ -19,9 +19,10 @@
   `:overwrite` -- whether to overwrite an existing directory or,
       for `:delete`, to delete it first; if `:overwrite` is `nil`
       or `false`, an existing directory will not be overwritten."
-  [opts]
-  (println "loading template from git")
-  (load-git opts)
+  [{:keys [git] :as opts}]
+  (when git
+    (println "loading template from git")
+    (load-git opts))
   (println "creating new project from template")
   (new/create opts))
 
