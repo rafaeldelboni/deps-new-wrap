@@ -4,35 +4,43 @@ Wrapper over deps-new to give a more user friendly CLI
 ## Usage
 ```bash
 # For a template that is created with the github username/name as namespace
-clj -X:gh :template rafaeldelboni/helix-scratch :name myusername/mynewapp
+clj -X:new :gh rafaeldelboni/helix-scratch :name myusername/mynewapp
 
 # If the namespace is different from the repository owner
-clj -X:gh :repo rafaeldelboni/helix-scratch-clojars :template cc.delboni/helix-scratch :name myusername/mynewapp
+clj -X:new :gh rafaeldelboni/helix-scratch-clojars :template cc.delboni/helix-scratch :name myusername/mynewapp
 ```
 
 ### Github
 ```bash
-clj -X:gh :template rafaeldelboni/helix-scratch :name myusername/mynewapp
+clj -X:new :gh rafaeldelboni/helix-scratch :name myusername/mynewapp
 ```
 ### Gitlab
 ```bash
-clj -X:gl :template rafaeldelboni/helix-scratch :name myusername/mynewapp
+clj -X:new :gl rafaeldelboni/helix-scratch :name myusername/mynewapp
 ```
 ### Bitbucket
 ```bash
-clj -X:bb :template rafaeldelboni/helix-scratch :name myusername/mynewapp
+clj -X:new :bb rafaeldelboni/helix-scratch :name myusername/mynewapp
 ```
 ### Sourcehut
 ```bash
-clj -X:sh :template rafaeldelboni/helix-scratch :name myusername/mynewapp
+clj -X:new :sh rafaeldelboni/helix-scratch :name myusername/mynewapp
 ```
 ### Codeberg
 ```bash
-clj -X:cb :template rafaeldelboni/helix-scratch :name myusername/mynewapp
+clj -X:new :cb rafaeldelboni/helix-scratch :name myusername/mynewapp
 ```
 ### Git Url
 ```bash
-clj -X:git :url https://github.com/rafaeldelboni/helix-scratch.git :template :cc.delboni/helix-scratch :name myusername/mynewapp
+clj -X:new :git https://github.com/rafaeldelboni/helix-scratch.git :template :rafaeldelboni/helix-scratch :name myusername/mynewapp
+```
+
+### Default
+```bash
+# You can always use deps-new default commands as well
+clj -X:new :name myname/myapp
+clj -X:new :template lib :name myname/my-cool-lib
+clj -X:new :template scratch :name poc/simple-app
 ```
 
 ## Developing

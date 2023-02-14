@@ -22,15 +22,5 @@
                                  :uber-file "target/deps-new-wrap.jar"}}
 
            ;; commands
-           :git {:ns-default cc.delboni.main
-                :exec-fn git}
-           :gh {:ns-default cc.delboni.main
-                :exec-fn gh}
-           :gl {:ns-default cc.delboni.main
-                :exec-fn gl}
-           :bb {:ns-default cc.delboni.main
-                :exec-fn bb}
-           :sh {:ns-default cc.delboni.main
-                :exec-fn sh}
-           :cb {:ns-default cc.delboni.main
-                :exec-fn cb}}}
+           :new {:ns-default cc.delboni.main
+                 :exec-fn new}}}
