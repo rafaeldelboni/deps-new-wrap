@@ -1,12 +1,13 @@
 {:paths ["src"]
 
- :deps  {org.clojure/tools.deps {:mvn/version "0.16.1281"}
+ :deps  {org.clojure/tools.deps {:mvn/version "0.16.1285"}
          org.clojure/tools.gitlibs {:mvn/version "2.5.190"}
          io.github.seancorfield/deps-new {:git/url "https://github.com/seancorfield/deps-new"
-                                          :git/sha "6f14ddb6f98c55d6bd8d6a50bcdf6bd1abdf57bf"}}
+                                          :git/tag "v0.5.0"
+                                          :git/sha "48bf01e"}}
 
  :aliases {:dev {:extra-paths ["test"]
-                 :extra-deps  {lambdaisland/kaocha {:mvn/version "1.77.1236"}
+                 :extra-deps  {lambdaisland/kaocha {:mvn/version "1.79.1270"}
                                nubank/matcher-combinators {:mvn/version "3.8.3"}}}
 
            :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.30.0"}}
