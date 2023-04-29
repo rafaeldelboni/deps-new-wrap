@@ -16,7 +16,8 @@ You can install tools adding the following `:alias` into your local `~/.clojure/
 clj -X:new :gh rafaeldelboni/helix-scratch :name myusername/mynewapp
 
 # If the namespace is different from the repository owner
-clj -X:new :gh rafaeldelboni/helix-scratch-clojars :template cc.delboni/helix-scratch :name myusername/mynewapp
+clj -X:new :gh practicalli/project-templates :template practicalli/application :name cc.delboni/pratical-application
+clj -X:new :gh practicalli/project-templates :template practicalli/service :name cc.delboni/pratical-service
 ```
 
 ### Github
