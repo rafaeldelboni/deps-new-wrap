@@ -6,7 +6,7 @@ You can install tools adding the following `:alias` into your local `~/.clojure/
 ```clojure
 :new {:extra-deps {cc.delboni/deps-new-wrap
                    {:git/url "https://github.com/rafaeldelboni/deps-new-wrap"
-                    :git/sha "be738d360314fd5ddd7013f87eda31dbbf4b78b7"}}
+                    :git/sha "6cf182427475d9f441b274d639a58cce3d285869"}}
       :exec-fn cc.delboni.main/new}
 ```
 
